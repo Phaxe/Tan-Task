@@ -1,9 +1,6 @@
 {
-    "dashboard": "Dashboard",
-    "investments": "Investments",
-    "addInvestment": "Add Investment",
-    "language": "Language",
-    "totalInvestments": "Total Investments",
-    "averageROI": "Average ROI"
+    "HomePage": {
+      "title": "Hello world!",
+      "about": "Go to the about page"
+    }
   }
-  

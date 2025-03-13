@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import IntelProvider from "@/i18n/IntelProvider"
+import StoreProvider from "@/redux/StoreProvider";
+import Sidebar from "@/components/SideBar/SideBar";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,11 +26,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <StoreProvider>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      <IntelProvider>{children}</IntelProvider>
+      <IntelProvider>
+        <div className="flex items-center justify-center w-full">
+          <Sidebar/>
+        {children}
+        </div>
+      </IntelProvider>
       </body>
+      </StoreProvider>
     </html>
   );
 }
